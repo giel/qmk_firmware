@@ -14,3 +14,4 @@ Created a new keymap:
 - [Josean: How To Use Code To Create Custom Keymaps With QMK](https://www.josean.com/posts/how-to-use-code-with-qmk)
 - [QMK docs: ](https://docs.qmk.fm/#/newbs_getting_started)
 - [This repo](https://github.com/giel/qmk_firmware)
+- [QMK Toolbox](https://github.com/qmk/qmk_toolbox) for  flashing . Does not yet work on Apple Silicon macs (v 3.1).
