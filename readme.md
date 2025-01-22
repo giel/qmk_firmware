@@ -12,6 +12,8 @@ Giel's fork.
 
 Actual keyboard added can be found here in [mg_sofle_v2](./keyboards/splitkb/aurora/sofle_v2/keymaps)
 
+To build the firmaware file run the `compile.sh` script in the root of the project.
+
 ----------
 
 
