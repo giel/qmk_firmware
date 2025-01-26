@@ -11,51 +11,110 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ====== layer 0 ======
 	[0] = LAYOUT(
-    // row 0 left numbers
+    // row 0 (6) left numbers
             KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5,
-    // row 0 right
+    // row 0 (6) right
                   KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS,
-    // row 1 left qwe
+
+    // row 1 (6) left qwe
               ALL_T(KC_TAB), KC_Q, MT(MOD_LSFT,KC_W), MT(MOD_LCTL,KC_E), MT(MOD_LALT,KC_R), MT(MOD_LGUI,KC_T),
-    // row 1 right yui
+    // row 1 (6) right yui
                 MT(MOD_RGUI, KC_Y), MT(MOD_RALT, KC_U), MT(MOD_RCTL,KC_I), MT(MOD_RSFT,KC_O), KC_P, KC_EQL,
-    // row 2 left asd
+
+    // row 2 (6) left asd
             MEH_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G,
-    // row 2 right
+    // row 2 (6) right
                   KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
-    // row 3 left zxc
+
+    // row 3 (7) left zxc
             OSM(MOD_LSFT), KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX,
-    // row 3 right
+    // row 3 (7) right
                   XXXXXXX, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT),
-    // row 4 left mods and space
+
+    // row 4 (5) left mods and space
             MO(1), MO(2), KC_MEH, KC_DEL, KC_SPC,
-    // row 4 right enter and mods
+    // row 4 (5) right enter and mods
                   KC_ENT, KC_BSPC, KC_RGUI, KC_RALT, KC_RCTL),
 
     // ====== layer 1 ======
 	[1] = LAYOUT(
-    // row 0 left numbers
+    // row 0 (6) left numbers
             TO(0), KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
     // row 0 right
                   KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
-    // row 1 left qwe
+
+    // row 1 (6) left qwe
             KC_TRNS, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS, KC_TRNS,
-    // row 1 right yui
+    // row 1 (6) right yui
                   KC_7, KC_8, KC_9, KC_LBRC, KC_RBRC, KC_F12,
-    // row 2 left asd
+
+    // row 2 (6) left asd
             KC_TRNS, KC_BSLS, KC_SLSH, KC_PIPE, KC_TRNS, KC_TRNS,
-    // row 2 right
+    // row 2 (6) right
                   KC_4, KC_5, KC_6, KC_PGUP, KC_UP, KC_PGDN,
-    // row 3 left zxc
+
+    // row (7) 3 left zxc
             KC_TRNS, KC_TRNS, KC_TRNS, G(KC_C), G(KC_V), KC_TRNS, XXXXXXX,
-    // row 3 right
+    // row 3 (7) right
                   XXXXXXX, KC_1, KC_2, KC_3, KC_LEFT, KC_DOWN, KC_RIGHT,
-    // row 4 left mods and space
+
+    // row 4 (5) left mods and space
             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    // row 4 right enter and mods
+    // row 4 (5) right enter and mods
                   KC_ENT, KC_0, KC_PDOT, KC_TRNS, KC_TRNS),
-	[2] = LAYOUT(KC_TRNS, KC_TRNS, KC_TRNS, BL_TOGG, BL_DOWN, BL_UP, KC_PGUP, KC_HOME, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT, KC_TRNS, KC_INS, KC_PSCR, KC_APP, XXXXXXX, XXXXXXX, KC_PGDN, KC_END, KC_UP, XXXXXXX, XXXXXXX, XXXXXXX, KC_TRNS, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, XXXXXXX, XXXXXXX, KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TRNS, KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(3), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-	[3] = LAYOUT(XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
+
+    // ====== layer 2 ======
+	[2] = LAYOUT(
+    // row 0 (6) left numbers
+            KC_TRNS, KC_TRNS, KC_TRNS, BL_TOGG, BL_DOWN, BL_UP,
+    // row 0 (6) right
+                  KC_TRNS, KC_PGUP, KC_HOME, KC_TRNS, KC_TRNS, QK_BOOT,
+
+    // row 1 (6) left qwe
+            KC_TRNS, KC_HOME, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
+    // row 1 (6) right yui
+              KC_TRNS, KC_INS, KC_PSCR, KC_APP, XXXXXXX, XXXXXXX,
+
+    // row 2 (6) left asd
+            KC_PGDN, KC_END, KC_UP, XXXXXXX, XXXXXXX, XXXXXXX,
+    // row 2 (6) right
+                  XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
+
+    // row 3 (7) left zxc
+            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, XXXXXXX, XXXXXXX,
+    // row 3 (7) right
+                  XXXXXXX, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+
+    // row 4 (5) left mods and space
+            KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,
+    // row 4 (5) right enter and mods
+                  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
+
+	[3] = LAYOUT(
+    // row 0 (6) left numbers
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    // row 0 (6) right
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+
+    // row 1 (6) left qwe
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    // row 1 (6) right yui
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+
+    // row 2 (6) left asd
+        XXXXXXX, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX,
+    // row 2 (6) right
+        XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
+
+    // row 3 (7) left zxc
+        XXXXXXX, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,
+    // row 3 (7) right
+        XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
+
+    // row 4 (5) left mods and space
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    // row 4 (5) right enter and mods
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 };
 
 #if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
