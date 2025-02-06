@@ -16,9 +16,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |  ` ~  |  1 ! |  2 @ |  3 # |  4 $ |  5 % |                   |  6 ^ |  7 & |  8 * |  9 ( |  0 ) |  - _  |
  * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
  * |  tab  |  q   |  w   |  e   |  r   |  t   |                   |  y   |  u   |  i   |  o   |  p   |  = +  |
+ * | hyper |      | shft | ctl  |  alt |  cmd |                   |      | cmd  | alt  | ctl  | shft |       |
  * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
  * |  esc  |  a   |  s   |  d   |  f   |  g   |                   |  h   |  j   |  k   |  l   |  ; : |  ' "  |
- * '---------------------+------+------+------|--.             .--|------+------+------+--------------------'
+ * |  meh  |      |      |      |      |      |                   |      |      |      |      |      |       |
+ * '---------------------+------+------+------|--.             .--|------+------+------+------+------+-------'
  * |  shft |  z   |  x   |  c   |  v   |  b   |  |             |  |  n   |  m   |  , < |  . > |  / ? | shft  |
  * '-------+------+------+------+------+------+--.---.     .---.--+------+------+------+------+------+-------'
  *                |  mo1 |  mo2 |  meh | bksp |  spc |     |  ent | del  |  gui |  alt | ctl  |
@@ -35,34 +37,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
      OSM(MOD_LSFT), KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX,    XXXXXXX, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT),
 
-              MO(1), MO(2), KC_MEH, KC_BSPC, KC_SPC,           KC_ENT, KC_DEL, KC_RGUI, KC_RALT, KC_RCTL),
+              MO(1), MO(2), KC_MEH, KC_BSPC, KC_SPC,           KC_ENT, KC_DEL, KC_RGUI, KC_RALT, KC_RCTL
+    ),
 
+/*
+ * 1 Layer: num + symbols
+ *
+ * .------------------------------------------.                   .------------------------------------------.
+ * |  TO 0 |  f1  |  f2  |  f3  |  f4  |  f5  |                   |  f6  |  f7  |  f8  |  f9  |  f10 |  f11  |
+ * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
+ * |       |  {   |  }   |  €   |      |      |                   |  7   |  8   |  9   | Home |  End |  f12  |
+ * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
+ * |       |  \   |  /   |  |   |      |      |                   |  4   |  5   |  6   | Home |  Up  | PgDn  |
+ * '---------------------+------+------+------|--.             .--|------+------+------+------+------+-------'
+ * |       |  [   |  ]   |      |      |      |  |             |  |  1   |  2   |  3   | PgUp | Down | Right |
+ * '-------+------+------+------+------+------+--.---.     .---.--+------+------+------+------+------+-------'
+ *                |      |      |      |      |      |     |      |  0   |  .   |      | Left |
+ *                |      |      |      |      |      |     |      |  Del |      |      |      |
+ *                '------'--------------------'------'     '------'--------------------'------'
+ */
     // ====== layer 1 ======
 	[1] = LAYOUT(
-    // row 0 (6) left numbers
-            TO(0), KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,
-    // row 0 right
-                  KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
+    TO(0), KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                       KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
 
-    // row 1 (6) left qwe
-            KC_TRNS, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS, KC_TRNS,
-    // row 1 (6) right yui
-                  KC_7, KC_8, KC_9, KC_LBRC, KC_RBRC, KC_F12,
+    KC_TRNS, KC_LCBR, KC_RCBR, LALT(LSFT(KC_2)), KC_TRNS,KC_TRNS,   KC_7, KC_8, KC_9, KC_HOME, KC_END, KC_F12,
 
-    // row 2 (6) left asd
-            KC_TRNS, KC_BSLS, KC_SLSH, KC_PIPE, KC_TRNS, KC_TRNS,
-    // row 2 (6) right
-                  KC_4, KC_5, KC_6, KC_PGUP, KC_UP, KC_PGDN,
+    KC_TRNS, KC_BSLS, KC_SLSH, KC_PIPE, KC_TRNS, KC_TRNS,           KC_4, KC_5, KC_6, KC_HOME, KC_UP, KC_PGDN,
 
-    // row (7) 3 left zxc
-            KC_TRNS, KC_TRNS, KC_TRNS, G(KC_C), G(KC_V), KC_TRNS, XXXXXXX,
-    // row 3 (7) right
-                  XXXXXXX, KC_1, KC_2, KC_3, KC_LEFT, KC_DOWN, KC_RIGHT,
+  KC_TRNS, KC_LBRC, KC_RBRC, KC_TRNS , KC_TRNS, KC_TRNS, XXXXXXX,
+                                                           XXXXXXX, KC_1, KC_2, KC_3, KC_PGUP, KC_DOWN, KC_RIGHT,
 
-    // row 4 (5) left mods and space
-            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    // row 4 (5) right enter and mods
-                  KC_ENT, KC_0, KC_PDOT, KC_TRNS, KC_TRNS),
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_0, KC_PDOT, KC_TRNS, KC_LEFT
+    ),
 
     // ====== layer 2 ======
 	[2] = LAYOUT(
