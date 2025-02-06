@@ -9,32 +9,33 @@
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+/*
+ * 0 Layer: base
+ *
+ * .------------------------------------------.                   .------------------------------------------.
+ * |  ` ~  |  1 ! |  2 @ |  3 # |  4 $ |  5 % |                   |  6 ^ |  7 & |  8 * |  9 ( |  0 ) |  - _  |
+ * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
+ * |  tab  |  q   |  w   |  e   |  r   |  t   |                   |  y   |  u   |  i   |  o   |  p   |  = +  |
+ * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
+ * |  esc  |  a   |  s   |  d   |  f   |  g   |                   |  h   |  j   |  k   |  l   |  ; : |  ' "  |
+ * '---------------------+------+------+------|--.             .--|------+------+------+--------------------'
+ * |  shft |  z   |  x   |  c   |  v   |  b   |  |             |  |  n   |  m   |  , < |  . > |  / ? | shft  |
+ * '-------+------+------+------+------+------+--.---.     .---.--+------+------+------+------+------+-------'
+ *                |  mo1 |  mo2 |  meh | bksp |  spc |     |  ent | del  |  gui |  alt | ctl  |
+ *                '------'--------------------'------'     '------'--------------------'------'
+ */
     // ====== layer 0 ======
 	[0] = LAYOUT(
-    // row 0 (6) left numbers
-            KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5,
-    // row 0 (6) right
-                  KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS,
+     KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5,                            KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS,
 
-    // row 1 (6) left qwe
-              ALL_T(KC_TAB), KC_Q, MT(MOD_LSFT,KC_W), MT(MOD_LCTL,KC_E), MT(MOD_LALT,KC_R), MT(MOD_LGUI,KC_T),
-    // row 1 (6) right yui
+     ALL_T(KC_TAB), KC_Q, MT(MOD_LSFT,KC_W), MT(MOD_LCTL,KC_E), MT(MOD_LALT,KC_R), MT(MOD_LGUI,KC_T),
                 MT(MOD_RGUI, KC_Y), MT(MOD_RALT, KC_U), MT(MOD_RCTL,KC_I), MT(MOD_RSFT,KC_O), KC_P, KC_EQL,
 
-    // row 2 (6) left asd
-            MEH_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G,
-    // row 2 (6) right
-                  KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
+     MEH_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G,                      KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
 
-    // row 3 (7) left zxc
-            OSM(MOD_LSFT), KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX,
-    // row 3 (7) right
-                  XXXXXXX, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT),
+     OSM(MOD_LSFT), KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX,    XXXXXXX, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT),
 
-    // row 4 (5) left mods and space
-            MO(1), MO(2), KC_MEH, KC_DEL, KC_SPC,
-    // row 4 (5) right enter and mods
-                  KC_ENT, KC_BSPC, KC_RGUI, KC_RALT, KC_RCTL),
+              MO(1), MO(2), KC_MEH, KC_BSPC, KC_SPC,           KC_ENT, KC_DEL, KC_RGUI, KC_RALT, KC_RCTL),
 
     // ====== layer 1 ======
 	[1] = LAYOUT(
