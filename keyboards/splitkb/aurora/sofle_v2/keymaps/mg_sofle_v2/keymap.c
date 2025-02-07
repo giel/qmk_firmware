@@ -70,32 +70,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_0, KC_PDOT, KC_TRNS, KC_LEFT
     ),
 
-    // ====== layer 2 ======
+/*
+ * 2 Layer: arrows and system
+ *
+ * .------------------------------------------.                   .------------------------------------------.
+ * |  TO 0 |      |      |      |      |      |                   | vol- | vol+ | mute | Ins  |      | reset |
+ * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
+ * |       |      | ms 1 | ms up| ms 2 |      |                   |      |      |      | Home |  End | PgUp  |
+ * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
+ * |       |      |ms lft|ms dn |ms rgt|      |                   | Left | Down |  Up  | Right|  Up  | PgDn  |
+ * '---------------------+------+------+------|--.             .--|------+------+------+------+------+-------'
+ * |       |      |      |      |      |      |  |             |  |      |      |      | PgUp | Down | Right |
+ * '-------+------+------+------+------+------+--.---.     .---.--+------+------+------+------+------+-------'
+ *                |      |      |      |      |      |     |      |  0   |  .   |      | Left |
+ *                |      |      |      |      |      |     |      |  Del |      |      |      |
+ *                '------'--------------------'------'     '------'--------------------'------'
+ */
 	[2] = LAYOUT(
-    // row 0 (6) left numbers
-            KC_TRNS, KC_TRNS, KC_TRNS, BL_TOGG, BL_DOWN, BL_UP,
-    // row 0 (6) right
-                  KC_TRNS, KC_PGUP, KC_HOME, KC_TRNS, KC_TRNS, QK_BOOT,
+    TO(0), KC_TRNS, KC_TRNS, BL_TOGG, BL_DOWN, BL_UP,          KC_KB_VOLUME_DOWN,KC_KB_VOLUME_UP,KC_KB_MUTE,KC_INS,KC_TRNS,QK_BOOT,
 
-    // row 1 (6) left qwe
-            KC_TRNS, KC_HOME, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
-    // row 1 (6) right yui
-              KC_TRNS, KC_INS, KC_PSCR, KC_APP, XXXXXXX, XXXXXXX,
+    KC_TRNS,KC_TRNS, KC_MS_BTN1,KC_MS_UP,KC_MS_BTN2,KC_TRNS,       KC_TRNS,KC_TRNS,KC_TRNS,KC_HOME,KC_END,KC_PGUP,
 
-    // row 2 (6) left asd
-            KC_PGDN, KC_END, KC_UP, XXXXXXX, XXXXXXX, XXXXXXX,
-    // row 2 (6) right
-                  XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
+    KC_TRNS,KC_TRNS, KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT, KC_TRNS,   KC_LEFT,KC_DOWN,KC_UP,KC_RIGHT,KC_UP,KC_PGDN,
 
-    // row 3 (7) left zxc
-            KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, XXXXXXX, XXXXXXX,
-    // row 3 (7) right
-                  XXXXXXX, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, XXXXXXX,
+                                                           XXXXXXX, KC_TRNS,KC_TRNS,KC_TRNS, KC_PGUP, KC_DOWN, KC_RIGHT,
 
-    // row 4 (5) left mods and space
-            KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, XXXXXXX,
-    // row 4 (5) right enter and mods
-                  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,     KC_TRNS, KC_0, KC_PDOT, KC_TRNS, KC_LEFT
+    ),
+
+//----------------------------------------------------------------------------------------------------------------------
+
+
 
 	[3] = LAYOUT(
     // row 0 (6) left numbers
