@@ -7,6 +7,7 @@
  * edit it directly.
  */
 
+// https://docs.qmk.fm/keycodes#keycodes-overview
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
@@ -37,8 +38,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
      OSM(MOD_LSFT), KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX,    XXXXXXX, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT),
 
-              MO(1), MO(2), KC_MEH, KC_BSPC, KC_SPC,           KC_ENT, KC_DEL, KC_RGUI, KC_RALT, KC_RCTL
+              TT(1), MO(2), KC_MEH, KC_BSPC, KC_SPC,           KC_ENT, KC_DEL, KC_RGUI, KC_RALT, KC_RCTL
     ),
+//  TT does not seem to work. Works same as MO.
 
 /*
  * 1 Layer: num + symbols
@@ -74,9 +76,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * 2 Layer: arrows and system
  *
  * .------------------------------------------.                   .------------------------------------------.
- * |  TO 0 |      |      |      |      |      |                   | vol- | vol+ | mute | Ins  |      | reset |
+ * |  TO 0 | rgb- | rgb+ |Tgl Bl|Brght-|Brght-|                   | vol- | vol+ | mute | Ins  |      | reset |
  * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
- * |       |      | ms 1 | ms up| ms 2 |      |                   |      |      |      | Home |  End | PgUp  |
+ * |       |      | ms 1 | ms up| ms 2 |      |                   |M.prv | M.nxt| M.ply| Home |  End | PgUp  |
  * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
  * |       |      |ms lft|ms dn |ms rgt|      |                   | Left | Down |  Up  | Right|  Up  | PgDn  |
  * '---------------------+------+------+------|--.             .--|------+------+------+------+------+-------'
@@ -87,9 +89,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                '------'--------------------'------'     '------'--------------------'------'
  */
 	[2] = LAYOUT(
-    TO(0), KC_TRNS, KC_TRNS, BL_TOGG, BL_DOWN, BL_UP,          KC_KB_VOLUME_DOWN,KC_KB_VOLUME_UP,KC_KB_MUTE,KC_INS,KC_TRNS,QK_BOOT,
+    TO(0), RGB_SAD,RGB_SAI, RGB_TOG, RGB_VAD,RGB_VAI,          KC_KB_VOLUME_DOWN,KC_KB_VOLUME_UP,KC_KB_MUTE,KC_INS,KC_TRNS,QK_BOOT,
 
-    KC_TRNS,KC_TRNS, KC_MS_BTN1,KC_MS_UP,KC_MS_BTN2,KC_TRNS,       KC_TRNS,KC_TRNS,KC_TRNS,KC_HOME,KC_END,KC_PGUP,
+    KC_TRNS,KC_TRNS, KC_MS_BTN1,KC_MS_UP,KC_MS_BTN2,KC_TRNS,       KC_MPRV,KC_MNXT,KC_MPLY,KC_HOME,KC_END,KC_PGUP,
 
     KC_TRNS,KC_TRNS, KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT, KC_TRNS,   KC_LEFT,KC_DOWN,KC_UP,KC_RIGHT,KC_UP,KC_PGDN,
 
