@@ -15,9 +15,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *
  * .------------------------------------------.                   .------------------------------------------.
  * |  ` ~  |  1 ! |  2 @ |  3 # |  4 $ |  5 % |                   |  6 ^ |  7 & |  8 * |  9 ( |  0 ) |  - _  |
+ * |       |      |CtlAlt|shfCtl|shfAlt|shtCmd|                   |shfCmd|shfAlt|shfCtl| shft |      |       |
  * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
  * |  tab  |  q   |  w   |  e   |  r   |  t   |                   |  y   |  u   |  i   |  o   |  p   |  = +  |
- * | hyper |      | shft | ctl  |  alt |  cmd |                   |      | cmd  | alt  | ctl  | shft |       |
+ * | hyper |      | shft | ctl  |  alt |  cmd |                   | cmd  | alt  | ctl  | shft |      |       |
  * |-------+------+------+------+------+------|                   |------+------+------+------+------+-------|
  * |  esc  |  a   |  s   |  d   |  f   |  g   |                   |  h   |  j   |  k   |  l   |  ; : |  ' "  |
  * |  meh  |      |      |      |      |      |                   |      |      |      |      |      |       |
@@ -29,7 +30,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     // ====== layer 0 ======
 	[0] = LAYOUT(
-     KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5,                            KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS,
+     KC_GRV, KC_1, MT(MOD_LCTL|MOD_LALT,KC_2),MT(MOD_LSFT|MOD_LCTL,KC_3),MT(MOD_LSFT|MOD_LALT,KC_4),MT(MOD_LSFT|MOD_LGUI,KC_5),
+                  MT(MOD_RSFT|MOD_RGUI,KC_6),MT(MOD_RSFT|MOD_RALT,KC_7),MT(MOD_RSFT|MOD_RCTL,KC_8),MT(MOD_RCTL|MOD_RALT,KC_9), KC_0, KC_MINS,
 
      ALL_T(KC_TAB), KC_Q, MT(MOD_LSFT,KC_W), MT(MOD_LCTL,KC_E), MT(MOD_LALT,KC_R), MT(MOD_LGUI,KC_T),
                 MT(MOD_RGUI, KC_Y), MT(MOD_RALT, KC_U), MT(MOD_RCTL,KC_I), MT(MOD_RSFT,KC_O), KC_P, KC_EQL,
