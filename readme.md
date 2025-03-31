@@ -12,7 +12,17 @@ Giel's fork.
 
 Actual keyboard added can be found here in [mg_sofle_v2](./keyboards/splitkb/aurora/sofle_v2/keymaps)
 
-To build the firmaware file run the `compile.sh` script in the root of the project.
+To build the firmware file run the `compile.sh` script in the root of the project.
+
+To flash the firmware to the keyboard run the `flash.sh` script in the root of the project. 
+
+Enter the bootloader using any of the following methods:
+-  Tap the QK_BOOT keycode (Layer 2 '-' )
+-  Double-tap the nRST button on the PCB (near the TRRS connector)
+
+Wait for the OS to detect the device.
+
+You need to save the firmware file to both halves of the keyboard. Use the first method for the left halve, and the second method for the right halve.
 
 ----------
 

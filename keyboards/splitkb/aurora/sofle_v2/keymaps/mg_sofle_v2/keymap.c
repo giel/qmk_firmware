@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * '---------------------+------+------+------|--.             .--|------+------+------+------+------+-------'
  * |  shft |  z   |  x   |  c   |  v   |  b   |  |             |  |  n   |  m   |  , < |  . > |  / ? | shft  |
  * '-------+------+------+------+------+------+--.---.     .---.--+------+------+------+------+------+-------'
- *                |  mo1 |  mo2 |  meh | bksp |  spc |     |  ent | del  |  to1 |  to2 | gui  |
+ *                |  mo1 |  mo2 | lgui | bksp |  spc |     |  ent | del  |  to1 |  to2 | meh  |
  *                '------'--------------------'------'     '------'--------------------'------'
  */
     // ====== layer 0 ======
@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
      OSM(MOD_LSFT), KC_Z, KC_X, KC_C, KC_V, KC_B, XXXXXXX,    XXXXXXX, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, OSM(MOD_RSFT),
 
-              TT(1), MO(2), KC_MEH, KC_BSPC, KC_SPC,           KC_ENT, KC_DEL, TO(1), TO(2), KC_RGUI
+              TT(1), MO(2), KC_LGUI, KC_BSPC, KC_SPC,           KC_ENT, KC_DEL, TO(1), TO(2), KC_MEH
     ),
 //  TT does not seem to work. Works same as MO.
 
